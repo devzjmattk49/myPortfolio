@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		'Effective Solutions',
 		'Web Development',
 		'Frontend Development',
-		'Backend Development',
+		'Data Analystics',
 		'Dion J MAtthew K',
 	],
 	authors: [{ name: 'Dion J MAtthew K' }],
