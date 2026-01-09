@@ -1,3 +1,4 @@
+/* Ensure Tailwind CSS is properly configured */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
