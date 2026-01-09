@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 	title: 'myOwnsite',
 	description:
 		'Welcome to my portfolio! I am a passionate designer who love creating simple and effective solutions. Explore my projects and creations approach.',
+	icons: {
+        icon: '/zj_bk fevicon.png',
+    },
 
 	keywords: [
 		'Web Developer',
