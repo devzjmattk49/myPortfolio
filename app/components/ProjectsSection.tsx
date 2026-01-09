@@ -1,22 +1,78 @@
 import Image from 'next/image';
 
 export default function ProjectsSection() {
+	const projects = [
+		{
+			title: 'Project Alpha',
+			description: 'A responsive web application built with React and Node.js. Features real-time data visualization and user authentication.'
+		},
+		{
+			title: 'Project Beta',
+			description: 'Full-stack e-commerce platform with payment integration, inventory management, and analytics dashboard.'
+		},
+		{
+			title: 'Project Gamma',
+			description: 'Mobile-first design system and component library using Tailwind CSS and TypeScript.'
+		},
+		{
+			title: 'Project Delta',
+			description: 'AI-powered content management system with advanced search and filtering capabilities.'
+		}
+	];
+
 	return (
-		<section className="py-12 sm:py-20">
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center">Featured Projects</h2>
+		<section id="projects" className="relative py-20 sm:py-32 overflow-hidden">
+			{/* Background elements */}
+			<div className="absolute inset-0 -z-10">
+				<div className="absolute top-1/3 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+				<div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+			</div>
+
+			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="text-center mb-12 sm:mb-16">
+					<h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+						Featured Projects
+					</h2>
+					<div className="h-1 w-20 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto mt-4"></div>
+				</div>
+
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-					{[1, 2, 3, 4].map((project) => (
-						<div key={project} className="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-							<div className="aspect-video bg-gray-700 relative">
-								<Image src={`/code.jpg`} alt={`Project ${project}`} fill className="object-cover" />
+					{projects.map((project, index) => (
+						<div 
+							key={index} 
+							className="group relative rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-2 border border-slate-700 hover:border-purple-500 bg-gradient-to-br from-slate-800 to-slate-900"
+						>
+							{/* Image container */}
+							<div className="relative aspect-video bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
+								<Image 
+									src={'/code.jpg'} 
+									alt={project.title} 
+									fill 
+									className="object-cover group-hover:scale-110 transition-transform duration-300"
+								/>
+								<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 							</div>
-							<div className="p-4 sm:p-6">
-								<h3 className="text-base sm:text-lg font-semibold text-white mb-2">Project Title {project}</h3>
-								<p className="text-sm sm:text-base text-gray-300 mb-4">A brief description of the project and the technologies used in its development.</p>
-								<div className="flex gap-2">
-									<a href="#" className="text-blue-400 hover:text-blue-300 font-medium text-sm sm:text-base">
+
+							{/* Content */}
+							<div className="p-5 sm:p-6 relative z-10">
+								<h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+									{project.title}
+								</h3>
+								<p className="text-sm sm:text-base text-gray-300 mb-6 leading-relaxed">
+									{project.description}
+								</p>
+								<div className="flex gap-4">
+									<a 
+										href="#" 
+										className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 text-sm sm:text-base"
+									>
 										View Project →
+									</a>
+									<a 
+										href="#" 
+										className="inline-flex items-center gap-2 px-4 py-2 border border-purple-400 text-purple-300 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300 text-sm sm:text-base"
+									>
+										Code
 									</a>
 								</div>
 							</div>

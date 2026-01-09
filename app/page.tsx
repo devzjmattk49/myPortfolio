@@ -7,7 +7,7 @@ import ContactSection from './components/ContactSection';
 
 export default function SimplePortfolio() {
 	return (
-		<main className="min-h-screen bg-gray-900 pt-12">
+		<main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
 			<HeroSection />
 			<SkillsSection />
 			<ProjectsSection />

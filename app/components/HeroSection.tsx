@@ -4,19 +4,51 @@ import Image from 'next/image';
 
 export default function HeroSection() {
 	return (
-		<section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-			<div className="text-center">
-				<div className="mb-6 sm:mb-8">
-					<Image src="/codechefp3.png" alt="Dion's Profile Picture" width={120} height={120} className="rounded-full mx-auto border-4 border-gray-700 shadow-lg" />
+		<section className="relative overflow-hidden py-20 sm:py-32">
+			{/* Gradient background elements */}
+			<div className="absolute inset-0 -z-10">
+				<div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+				<div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+			</div>
+
+			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="text-center space-y-6">
+					<div className="mb-8">
+						<div className="inline-block">
+							<Image 
+								src="/codechefp3.png" 
+								alt="Dion's Profile Picture" 
+								width={140} 
+								height={140} 
+								className="rounded-full mx-auto border-4 border-blue-500 shadow-2xl shadow-blue-500/50 hover:scale-110 transition-transform duration-300"
+							/>
+						</div>
+					</div>
+					
+					<div className="space-y-4">
+						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+							Dion J MAtthew K
+						</h1>
+						
+						<p className="text-xl sm:text-2xl font-semibold text-blue-300">
+							Independent Designer & Developer
+						</p>
+						
+						<p className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+							<i>I craft exceptional and accessible digital experiences for the web. 
+							Focusing on elegant solutions to complex challenges with beautiful design and functionality.</i>
+						</p>
+					</div>
+
+					<div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+						<a href="#projects" className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
+							View My Work
+						</a>
+						<a href="#contact" className="px-8 py-3 border-2 border-blue-400 text-blue-300 rounded-lg font-semibold hover:bg-blue-500/10 transition-all duration-300">
+							Get In Touch
+						</a>
+					</div>
 				</div>
-				<h1 className="text-3xl sm:text-4xl font-bold text-white mb-3 sm:mb-4">Dion J MAtthew KODIYANPLCKAL</h1>
-				<p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8"><b>INDEPENDENT DESIGNER & WEBSITE CREATOR</b></p>
-				<p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-4">
-					<b><i>I build exceptional and accessible digital experiences for the web and other creatives.
-					Focusing on beautiful solutions to complicated challenges.</i></b>
-				</p>
-			{/*I create excellent and accessible digital experiences for websites and other creatives. 
-					Focusing on creating elegant solutions to complex problems.*/}
 			</div>
 		</section>
 	);
